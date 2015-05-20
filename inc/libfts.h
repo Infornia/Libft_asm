@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   libfts.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwilk <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/18 16:33:33 by mwilk             #+#    #+#             */
-/*   Updated: 2015/05/20 13:47:37 by mwilk            ###   ########.fr       */
+/*   Created: 2015/05/20 13:33:45 by mwilk             #+#    #+#             */
+/*   Updated: 2015/05/20 13:36:27 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "inc/libfts.h"
-
-int		main(void)
-{
-	char	*s;
-
-	s[0] = 'a';
-	s[1] = 'b';
-	s[2] = 'c';
-	s[3] = '\0';
-	printf("%s", s);
-	ft_bzero((void *)s, 2);
-	printf("%s", s);
-	ft_strcat(s, "HELLO");
-	printf("%s", s);
-	return (0);
-}
+void		ft_bzero(void *mem, size_t size);
+char		*ft_strcat(char *, const char *);
+int			ft_isalpha(int);
+int			ft_isdigit(int);
+int			ft_isalnum(int);
+int			ft_isascii(int);
+int			ft_isprint(int);
+int			ft_toupper(int);
+int			ft_tolower(int);

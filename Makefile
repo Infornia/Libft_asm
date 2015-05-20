@@ -13,6 +13,7 @@
 NAME = libfts.a
 
 SRC = ft_bzero.s\
+	  ft_strcat.s\
 
 OBJ_PATH = obj
 SRC_PATH = src

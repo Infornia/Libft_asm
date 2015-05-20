@@ -1,22 +1,42 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ft_bzero.s                                         :+:      :+:    :+:    #
+#    ft_strcat.s                                        :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: mwilk <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/05/16 20:51:13 by mwilk             #+#    #+#              #
-#    Updated: 2015/05/20 13:44:58 by mwilk            ###   ########.fr        #
+#    Created: 2015/05/20 13:12:39 by mwilk             #+#    #+#              #
+#    Updated: 2015/05/20 13:59:43 by mwilk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-global _ft_bzero
+global _ft_strcat
 section .text
 
-_ft_bzero:
-		push	rdi
-		mov				rax, 0
+_ft_strcat:
+		push	rbx
+		push	rcx
+		mov				rbx, rdi
 		mov				rcx, rsi
-		rep				stosb
-		pop				rax
+
+reach_end:
+		cmp				byte [rbx], 0
+		je				copy
+		inc				rbx
+		jmp				reach_end
+
+copy:
+		cmp				byte [rcx], 0
+		je				ret_
+		mov				rax, [rcx]
+		mov				[rbx], al
+		inc				rcx
+		inc				rbx
+		jmp				copy
+
+ret_:
+		mov				byte [rbx], 0
+		mov				rax, rdi
+		pop				rcx
+		pop				rbx
 		ret
