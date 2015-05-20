@@ -19,3 +19,5 @@ int			ft_isascii(int);
 int			ft_isprint(int);
 int			ft_toupper(int);
 int			ft_tolower(int);
+char		*ft_puts(const char *);
+int			ft_strlen(char *);

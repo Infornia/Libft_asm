@@ -12,8 +12,19 @@
 
 NAME = libfts.a
 
-SRC = ft_bzero.s\
-	  ft_strcat.s\
+SRC =	ft_bzero.s\
+	ft_strcat.s\
+	ft_isalpha.s\
+	ft_isalnum.s\
+	ft_isdigit.s\
+	ft_isprint.s\
+	ft_isascii.s\
+	ft_isupper.s\
+	ft_islower.s\
+	ft_tolower.s\
+	ft_toupper.s\
+	ft_puts.s\
+	ft_strlen.s
 
 OBJ_PATH = obj
 SRC_PATH = src

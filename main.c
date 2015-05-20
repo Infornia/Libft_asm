@@ -15,16 +15,20 @@
 
 int		main(void)
 {
-	char	*s;
+	int i = -100;
 
-	s[0] = 'a';
-	s[1] = 'b';
-	s[2] = 'c';
-	s[3] = '\0';
-	printf("%s", s);
-	ft_bzero((void *)s, 2);
-	printf("%s", s);
-	ft_strcat(s, "HELLO");
-	printf("%s", s);
+	while (i < 300)
+	{
+		printf("Pour %i:\n alpha:%i\n digit:%i\n alnum:%i\n",
+			i, ft_isalpha(i), ft_isdigit(i), ft_isalnum(i));
+		i++;
+	}
+	char s[] = "Yo";
+
+	printf("%s", ft_strcat(s, "HELLO"));
+	printf("%i", ft_isalpha('a'));
+	printf("%i", ft_isalpha('\\'));
+	printf("%i", ft_isalpha('t'));
+	printf("%i", ft_isalpha('0'));
 	return (0);
 }
