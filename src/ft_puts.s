@@ -6,7 +6,7 @@
 #    By: mwilk <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/05/16 20:51:13 by mwilk             #+#    #+#              #
-#    Updated: 2015/05/20 13:44:58 by mwilk            ###   ########.fr        #
+#    Updated: 2015/05/22 17:06:46 by mwilk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,40 +18,45 @@
 global _ft_puts
 
 section .data
-		msg:
-			db		'(null)\n'
-		.len: equ $ - msg
 		endl:
-			db		'\n'
+					db		0x0a
 
 section .text
 		extern _ft_strlen
 
 _ft_puts:
 		cmp			rdi, 0
-		je			end_null
+		je			NULL
 
 		mov			rsi, rdi
-		call		_ft_strlen
+		call	_ft_strlen
 
 		mov			rdi, STDOUT
 		mov			rdx, rax
-		mov			rax, WRITE
+		mov		rax, WRITE
 		syscall
 
-		mov			rdi, STDOUT
-		mov			rsi, endl
+		lea			rsi, [rel endl]
 		mov			rdx, 1
-		mov			rax, WRITE
+		mov		rax, WRITE
 		syscall
 		jmp			ret_
 
-end_null:
+NULL:
+		mov			rdi, 1
+		lea			rsi, [rel msg.string]
+		mov			rdx, 6
 		mov		rax, WRITE
-		mov			rdi, STDOUT
-		mov			rsi, msg
-		mov			rdx, msg.len
+		syscall
+
+		mov			rdx, 1
+		lea			rsi, [rel endl]
+		mov		rax, WRITE
 		syscall
 
 ret_:
+		mov		rax, 10
 		ret
+
+msg:
+	.string db "(null)"
