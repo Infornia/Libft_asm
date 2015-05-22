@@ -6,7 +6,7 @@
 /*   By: mwilk <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 16:33:33 by mwilk             #+#    #+#             */
-/*   Updated: 2015/05/22 17:06:57 by mwilk            ###   ########.fr       */
+/*   Updated: 2015/05/22 20:09:39 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int		main(void)
 {
-	char s[] = "Yo";
+	char s[] = "Yo my name is Fuck You";
 
 	printf("%s", ft_strcat(s, "HELLO"));
 	printf("%i", ft_isalpha('a'));
@@ -29,5 +29,7 @@ int		main(void)
 	ft_puts(NULL);
 	ft_puts("");
 	ft_puts("\0");
+	ft_memset(s, 'c', 3);
+	ft_puts(s);
 	return (0);
 }

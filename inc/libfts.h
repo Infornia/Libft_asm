@@ -6,7 +6,7 @@
 /*   By: mwilk <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/20 13:33:45 by mwilk             #+#    #+#             */
-/*   Updated: 2015/05/20 13:36:27 by mwilk            ###   ########.fr       */
+/*   Updated: 2015/05/22 18:45:21 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,4 @@ int			ft_toupper(int);
 int			ft_tolower(int);
 char		*ft_puts(const char *);
 int			ft_strlen(char *);
+void		*ft_memset(void *b, int c, size_t len);
