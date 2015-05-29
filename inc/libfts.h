@@ -6,7 +6,7 @@
 /*   By: mwilk <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/20 13:33:45 by mwilk             #+#    #+#             */
-/*   Updated: 2015/05/29 20:26:00 by mwilk            ###   ########.fr       */
+/*   Updated: 2015/05/29 20:46:08 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,4 @@ int			ft_strlen(char *);
 void		*ft_memset(void *, int, size_t);
 void		*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 char		*ft_strdup(const char *s1);
+void		ft_cat(int fd);
