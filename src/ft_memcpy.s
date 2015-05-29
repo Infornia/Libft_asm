@@ -6,15 +6,16 @@
 #    By: mwilk <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/05/22 20:10:36 by mwilk             #+#    #+#              #
-#    Updated: 2015/05/22 20:13:55 by mwilk            ###   ########.fr        #
+#    Updated: 2015/05/29 20:19:04 by mwilk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 global _ft_memcpy
 
-section .texte
+section .text
 _ft_memcpy:
-		mov	rcx, rdx
+		mov	rbx, rsi
 		mov	rax, rdi
+		mov rcx, rdx
 		rep	movsb
 		ret
