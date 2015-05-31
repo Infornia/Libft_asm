@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 04:27:13 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/05/31 18:29:12 by mwilk            ###   ########.fr       */
+/*   Updated: 2015/05/31 20:40:39 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,7 +188,7 @@ int		main(int ac, char **av)
 **	Test of function ft_memcpy
 */
 	char	dst[8]="42 42 42";
-	char	src[6]="Hello";
+	char	src[8]="Hellooo";
 
 	printf("ft_memcpy  \033[32mOK\033[0m :)");
 	printf("	avant ft_memcpy : src = %s et dst = %s", src, dst);
@@ -227,5 +227,13 @@ int		main(int ac, char **av)
 	cucu = ft_strchr(caca, 'u');
 	printf("	ft_strchr u: Mine = %s et Yours = %s\n", coco, cucu);
 
+	printf("ft_memalloc  \033[32mOK\033[0m :)\n");
+	char *popo = (char *)ft_memalloc(0);
+	ft_puts(popo);
+	popo[0] = 'u';
+	popo[4] = 'u';
+	ft_puts(popo);
+	ft_puts(&popo[3]);
+	ft_puts(&popo[4]);
 	return (0);
 }

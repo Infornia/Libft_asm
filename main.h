@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 05:00:57 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/05/31 18:27:45 by mwilk            ###   ########.fr       */
+/*   Updated: 2015/05/31 20:28:31 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		ft_puts(const char *s);
 char	*ft_strcat(char *restrict s1, const char *restrict s2);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memalloc(size_t len);
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s1, int c);
