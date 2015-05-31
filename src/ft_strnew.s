@@ -1,35 +1,24 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_memalloc.s                                      :+:      :+:    :+:    ;
+;    ft_strnew.s                                        :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: mwilk <marvin@42.fr>                       +;+  +:+       +;+         ;
 ;                                                 +;+;+;+;+;+   +;+            ;
-;    Created: 2015/05/31 18:57:17 by mwilk             ;+;    ;+;              ;
-;    Updated: 2015/05/31 18:57:24 by mwilk            ;;;   ;;;;;;;;.fr        ;
+;    Created: 2015/05/31 20:47:13 by mwilk             ;+;    ;+;              ;
+;    Updated: 2015/05/31 20:47:13 by mwilk            ;;;   ;;;;;;;;.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
-global _ft_memalloc
+global _ft_strnew
 
 section .text
-		extern _ft_bzero
-		extern _malloc
+		extern _ft_memalloc
 
-_ft_memalloc:
-		push rdi
-		call	_malloc
+_ft_strnew:
+		push	rdi
+		inc		rdi
+		call	_ft_memalloc
 		cmp		rax, 0
-		je		ret_
-		mov	rdi, rax
-		pop	rsi
-		call _ft_bzero
+		pop		rdi
 		ret
-
-
-ret_:
-		mov rax, 0
-		ret
-
-
-

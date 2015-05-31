@@ -1,35 +1,32 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_memalloc.s                                      :+:      :+:    :+:    ;
+;    ft_putchar.s                                       :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: mwilk <marvin@42.fr>                       +;+  +:+       +;+         ;
 ;                                                 +;+;+;+;+;+   +;+            ;
-;    Created: 2015/05/31 18:57:17 by mwilk             ;+;    ;+;              ;
-;    Updated: 2015/05/31 18:57:24 by mwilk            ;;;   ;;;;;;;;.fr        ;
+;    Created: 2015/05/31 21:11:44 by mwilk             ;+;    ;+;              ;
+;    Updated: 2015/05/31 21:11:44 by mwilk            ;;;   ;;;;;;;;.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
-global _ft_memalloc
+%define WRITE	0x2000004
+
+section .bss
+		char	resb	1
 
 section .text
-		extern _ft_bzero
-		extern _malloc
+		global _ft_putchar
 
-_ft_memalloc:
-		push rdi
-		call	_malloc
-		cmp		rax, 0
-		je		ret_
-		mov	rdi, rax
-		pop	rsi
-		call _ft_bzero
+_ft_putchar:
+		enter	0, 0
+		lea		rsi, [rel char]
+		mov		byte[rsi], dil
+		mov		rax, WRITE
+		mov		rdx, 1
+		mov		rdi, 1
+		syscall
+		leave
 		ret
-
-
-ret_:
-		mov rax, 0
-		ret
-
 
 

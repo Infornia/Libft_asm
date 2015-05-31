@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 04:27:13 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/05/31 20:40:39 by mwilk            ###   ########.fr       */
+/*   Updated: 2015/05/31 21:18:33 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,12 +228,27 @@ int		main(int ac, char **av)
 	printf("	ft_strchr u: Mine = %s et Yours = %s\n", coco, cucu);
 
 	printf("ft_memalloc  \033[32mOK\033[0m :)\n");
-	char *popo = (char *)ft_memalloc(0);
+	char *popo = (char *)ft_memalloc(5);
 	ft_puts(popo);
 	popo[0] = 'u';
 	popo[4] = 'u';
 	ft_puts(popo);
 	ft_puts(&popo[3]);
 	ft_puts(&popo[4]);
+
+	printf("ft_strnew  \033[32mOK\033[0m :)\n");
+	char *papa = ft_strnew(5);
+	ft_puts(papa);
+	papa[0] = 'v';
+	papa[4] = 'v';
+	ft_puts(papa);
+
+	printf("ft_putchar  \033[32mOK\033[0m :)\n");
+	ft_putchar('H');
+	ft_putchar('e');
+	ft_putchar('l');
+	ft_putchar('l');
+	ft_putchar('o');
+	ft_putchar('\0');
 	return (0);
 }

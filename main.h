@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 05:00:57 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/05/31 20:28:31 by mwilk            ###   ########.fr       */
+/*   Updated: 2015/05/31 21:15:03 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		ft_islower(int c);
 int		ft_isupper(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+void	ft_putchar(char c);
 void	ft_bzero(void *s, size_t n);
 int		ft_puts(const char *s);
 char	*ft_strcat(char *restrict s1, const char *restrict s2);
@@ -38,6 +39,7 @@ void	*ft_memalloc(size_t len);
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s1, int c);
+char	*ft_strnew(size_t);
 void	ft_cat(int fd);
 int		ft_abs(int c);
 
