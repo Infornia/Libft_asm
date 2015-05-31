@@ -26,6 +26,8 @@ SRC =	ft_bzero.s\
 	ft_strlen.s\
 	ft_puts.s\
 	ft_memset.s\
+	ft_memcpy.s\
+	ft_strdup.s\
 
 OBJ_PATH = obj
 SRC_PATH = src
