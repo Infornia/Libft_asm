@@ -14,6 +14,7 @@ NAME = libfts.a
 
 SRC =	ft_bzero.s\
 	ft_strcat.s\
+	ft_strchr.s\
 	ft_isalpha.s\
 	ft_isalnum.s\
 	ft_isdigit.s\
@@ -29,6 +30,7 @@ SRC =	ft_bzero.s\
 	ft_memcpy.s\
 	ft_strdup.s\
 	ft_cat.s\
+	ft_abs.s\
 
 OBJ_PATH = obj
 SRC_PATH = src

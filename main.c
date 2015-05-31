@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 04:27:13 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/04/05 11:39:45 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/05/31 18:29:12 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,6 +206,26 @@ int		main(int ac, char **av)
 /*
 **	Test of function ft_cat
 */
-    
+ 	for (c = -100; c < 100; c++)
+	{
+		if (ft_abs(c) != abs(c))
+		{
+			printf("ft_abs \033[31;1mKO\033[0m :(\n");
+			break;
+		}
+	}   
+	if (ft_abs(c) == abs(c))
+		printf("ft_abs \033[32mOK\033[0m :)\n");	
+
+	char * caca = strdup("abcdefghijklmnopqrstuvwxyz");
+	char * coco = strchr(caca, 'd');
+	char * cucu = ft_strchr(caca, 'd');
+
+	printf("ft_strchr  \033[32mOK\033[0m :)\n");
+	printf("	ft_strchr d: Mine = %s et Yours = %s\n", coco, cucu);
+	coco = strchr(caca, 'u');
+	cucu = ft_strchr(caca, 'u');
+	printf("	ft_strchr u: Mine = %s et Yours = %s\n", coco, cucu);
+
 	return (0);
 }
