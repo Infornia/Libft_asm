@@ -1,41 +1,42 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_strdup.s                                        :+:      :+:    :+:    ;
+;    ft_cat.s                                           :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: mwilk <marvin@42.fr>                       +;+  +:+       +;+         ;
 ;                                                 +;+;+;+;+;+   +;+            ;
-;    Created: 2015/05/29 17:41:29 by mwilk             ;+;    ;+;              ;
-;    Updated: 2015/05/29 17:41:29 by mwilk            ;;;   ;;;;;;;;.fr        ;
+;    Created: 2015/05/29 20:41:15 by mwilk             ;+;    ;+;              ;
+;    Updated: 2015/05/29 20:41:15 by mwilk            ;;;   ;;;;;;;;.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
-global _ft_strdup
+%define WRITE	0x2000004
+%define READ	0x2000003
+
+section .bss
+		buff resb 1024
+		buff_size equ $-buff
 
 section .text
-		extern _ft_strlen
-		extern _malloc
-		extern _ft_memcpy
+		global _ft_cat
 
-_ft_strdup:
-		cmp		rdi, 0
-		je		ret_
-		push	rsi
-		push	rdi
-		call	_ft_strlen
-		push	rax
-		mov		rdi, rax
-		add		rdi, 1
-		call	_malloc
-		cmp		rax, 0
-		je		ret_
-		mov		rdi, rax
-		pop		rdx
-		pop		rsi
-		call	_ft_memcpy
-		pop		rsi
-		ret
+_ft_cat:
+		while:
+			push rdi
+			lea rsi, [rel buff]
+			mov rdx, buff_size
+			mov rax, READ
+			syscall
+			jc end
+			cmp rax, 0
+			jle end
+			mov rdi, 1
+			mov rdx, rax
+			mov rax, WRITE
+			syscall
+			pop rdi
+		jmp while
 
-ret_:
-		mov		rax, 0
+end:
+		pop rdi
 		ret

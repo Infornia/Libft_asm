@@ -28,6 +28,10 @@ SRC =	ft_bzero.s\
 	ft_memset.s\
 	ft_memcpy.s\
 	ft_strdup.s\
+<<<<<<< HEAD
+=======
+	ft_cat.s\
+>>>>>>> 28360e34a7aada7543f26b41799d3084514e4737
 
 OBJ_PATH = obj
 SRC_PATH = src
