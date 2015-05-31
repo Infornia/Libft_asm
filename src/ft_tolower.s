@@ -15,9 +15,9 @@ section .text
 
 _ft_tolower:
 		mov	rax, rdi
-		cmp rdi, 97
+		cmp rdi, 65
 		jl ret_
-		cmp rdi, 122
+		cmp rdi, 90
 		jg ret_
 		add	rax, 32
 		ret

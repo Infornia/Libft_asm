@@ -14,9 +14,9 @@ global _ft_isupper
 section .text
 
 _ft_isupper:
-		cmp	rdi, 101
+		cmp	rdi, 65
 		jl		ret_false
-		cmp	rdi, 132
+		cmp	rdi, 90
 		jg		ret_false
 		jmp		ret_true
 

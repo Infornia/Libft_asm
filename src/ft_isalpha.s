@@ -20,7 +20,7 @@ _ft_isalpha:
 		jl ret_true
 		cmp rdi, 97
 		jl ret_false
-		cmp rdi, 122
+		cmp rdi, 123
 		jl ret_true
 		jg ret_false
 ret_false:
