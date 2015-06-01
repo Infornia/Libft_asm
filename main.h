@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 05:00:57 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/05/31 21:15:03 by mwilk            ###   ########.fr       */
+/*   Updated: 2015/06/01 18:32:49 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memalloc(size_t len);
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 char	*ft_strdup(const char *s1);
+char	*ft_strcpy(char *, const char *);
+char	*ft_strncpy(char *s1, const char *s2, size_t n);
 char	*ft_strchr(const char *s1, int c);
 char	*ft_strnew(size_t);
 void	ft_cat(int fd);

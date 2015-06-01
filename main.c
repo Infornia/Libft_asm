@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 04:27:13 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/05/31 21:18:33 by mwilk            ###   ########.fr       */
+/*   Updated: 2015/06/01 18:29:29 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,6 +194,16 @@ int		main(int ac, char **av)
 	printf("	avant ft_memcpy : src = %s et dst = %s", src, dst);
 	ft_memcpy(dst, src, 5);
 	printf("		apres ft_memcpy : src = %s et dst = %s\n", src, dst);
+
+	printf("ft_strcpy  \033[32mOK\033[0m :)");
+	printf("	avant ft_strcpy : src = %s et dst = %s", src, dst);
+	ft_strcpy(dst, src);
+	printf("		apres ft_strcpy : src = %s et dst = %s\n", src, dst);
+
+	printf("ft_strncpy  \033[32mOK\033[0m :)");
+	printf("	avant ft_strncpy : src = %s et dst = %s", src, dst);
+	ft_strncpy(dst, "FUCK YOU", 5);
+	printf("		apres ft_strncpy : src = %s et dst = %s\n", src, dst);
 /*
 **	Test of function ft_strdup
 */

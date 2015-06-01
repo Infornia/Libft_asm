@@ -32,6 +32,8 @@ SRC =	ft_bzero.s\
 	ft_memcpy.s\
 	ft_memalloc.s\
 	ft_strdup.s\
+	ft_strcpy.s\
+	ft_strncpy.s\
 	ft_cat.s\
 	ft_abs.s\
 
