@@ -19,16 +19,16 @@ section .text
 
 _ft_strdup:
 		cmp		rdi, 0
-		je		ret_
+		je		error_
 		push	rsi
 		push	rdi
 		call	_ft_strlen
+		add		rax, 1
 		push	rax
 		mov		rdi, rax
-		add		rdi, 1
 		call	_malloc
 		cmp		rax, 0
-		je		ret_
+		je		error_
 		mov		rdi, rax
 		pop		rdx
 		pop		rsi
@@ -36,6 +36,6 @@ _ft_strdup:
 		pop		rsi
 		ret
 
-ret_:
+error_:
 		mov		rax, 0
 		ret

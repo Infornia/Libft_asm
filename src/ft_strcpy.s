@@ -15,16 +15,17 @@ section .text
 	extern _ft_strlen
 
 _ft_strcpy:
-		xor		al, al
+		mov			r8, rdi
 
-		push	rsi
-		push	rdi
+_loop:
+		mov			cl, [rsi]
+		mov			[rdi], cl
+		cmp			cl, 0
+		jz			_ret
+		inc			rdi
+		inc			rsi
+		jmp			_loop
 
-		mov		rdi, rsi
-		call	_ft_strlen
-		mov		rcx, rax
-		pop		rdi
-		pop		rsi
-		cld
-		rep		movsb
+_ret:
+		mov			rax, r8
 		ret
